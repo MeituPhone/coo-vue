@@ -1,0 +1,60 @@
+@import "../../../assets/scss/global/variables";
+.index{
+    padding: 100px 0px;
+    background-color: #ffffff;
+    &-content{
+        width: 650px;
+        margin: 0px auto;
+    }
+    .tool {
+        &-item {
+            border: 1px solid #efefef;
+            width: 300px;
+            margin-right: 50px;
+            padding: 80px 30px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            &:last-child {
+                margin-right: 0px;
+            }
+            .jx-icon {
+                color: $color-green;
+                font-size: 60px;
+            }
+        }
+        &-link{
+            display: block;
+            transform: translate(0px, 40px);
+            transition: transform 0.3s ease;
+            &:hover{
+                transform: none;
+                .tool-footer{
+                    .jx-btn{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &-title{
+            color: #000000;
+            font-size: 16px;
+            margin-top: 25px;
+        }
+        &-description{
+            color: #999999;
+            font-size: 12px;
+            margin-top: 15px;
+            line-height: 18px;
+        }
+        &-footer{
+            margin-top: 15px;
+            .jx-btn{
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            height: 40px;
+        }
+    }
+
+}

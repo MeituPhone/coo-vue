@@ -1,0 +1,8 @@
+@import "./global/normalize";
+@import "./global/variables";
+@import "./global/font";
+@import "./global/common";
+html,body,#js-app{
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,49 @@
+@import "../../assets/scss/global/variables";
+.jx-uploader{
+    border: 1px solid #efefef;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    background-color: transparent;
+    outline: none;
+    .jx-icon-add{
+        font-size: 30px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &:hover{
+        border-color: $color-green;
+        color: $color-green;
+    }
+    &-file{
+        display: none;
+    }
+    img{
+        width: 100%;
+    }
+    &-loading{
+        width: 30px;
+        height: 30px;
+        background-image: url(../../assets/images/loading.png);
+        background-size: cover;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -15px;
+        margin-top: -15px;
+        animation: loader 2s linear infinite;
+    }
+
+}
+
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg) translateZ(0)
+    }
+    to {
+        transform: rotate(360deg) translateZ(0)
+    }
+}

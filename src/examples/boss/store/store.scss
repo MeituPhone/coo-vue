@@ -1,0 +1,92 @@
+@import "../../../assets/scss/global/variables";
+.store{
+    padding-top: 30px;
+    &-title{
+        font-size: 20px;
+        color: #000000;
+        height: 50px;
+        line-height: 50px;
+        margin: 0px 0px 10px 0px;
+    }
+    &-body{
+        width: $global-width;
+        margin: 0px auto;
+    }
+    &-item{
+        &-outer{
+            width: 50%;
+            padding-right: 20px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            float: left;
+            &:nth-child(2n){
+                padding-right: 0px;
+            }
+        }
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
+        box-sizing: border-box;
+        padding: 20px 40px;
+        transition: box-shadow 0.3s ease;
+        position: relative;
+        &-edit{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 20px;
+            color: #999999;
+            &:hover{
+                color: $color-link;
+            }
+        }
+        &:hover{
+            box-shadow: 0 1px 10px rgba(150, 150, 150, 0.6);
+        }
+        &-title{
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #efefef;
+            padding-bottom: 10px;
+        }
+        &-info{
+            margin-top: 15px;
+        }
+        &-line{
+            margin-bottom: 5px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+        &-label{
+            display: inline-block;
+            width: 70px;
+            position: relative;
+            color: #888;
+            float: left;
+            &:after{
+                content: ':';
+                position: absolute;
+                right: 8px;
+            }
+        }
+        &-code{
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            transform-origin: 50% 50%;
+            font-size: 18px;
+            transform: rotate(-30deg) translate(0px, -60px);
+            text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+        }
+    }
+    &-nodata{
+        padding: 80px;
+        text-align: center;
+        a{
+            color: $color-link;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

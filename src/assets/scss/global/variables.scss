@@ -1,0 +1,87 @@
+//全局宽度
+$global-width: 1000px;
+
+$global-rem-number: ( 375 * 40 ) * 2 / 640;
+
+$color-green: #44B549;
+$color-link: #459ae9;
+// black
+$color-black: #000000;
+//  White
+$color-white:              #fff;
+$color-white-dark:         #f5f5f5;
+$color-body-bg:            #f7f7f7;
+$color-border:             #eaeaea;
+$color-white-dark-extra:   #dbdbdb;
+$color-white-darker:       darken($color-white, 13.5%);
+$color-white-darker-extra: darken($color-white, 20%);
+
+// Gray
+$color-gray-darker:   #333333;
+$color-gray-dark:     #555555;
+$color-gray:          #999999;
+$color-gray-light:    #cfcfcf;
+
+// pink
+$color-pink: #E62878;
+$color-pink-hover: #F8428F;
+
+// Border Radius
+$border-radius-default: 3px;
+$border-radius-xxs: 1px;
+$border-radius-xs: 2px;
+$border-radius-sm: 3px;
+$border-radius-md: 4px;
+$border-radius-lg: 6px;
+$border-radius-xl: 8px;
+$border-radius-xxl: 10px;
+$border-radius-xxxl: 12px;
+$border-radius-round: 500px;
+$border-radius-circle: $border-radius-round;
+
+
+// Font(Text) Sizes
+$font-size-xxs:   10px;
+$font-size-xs:    12px;
+$font-size-sm:    14px;
+$font-size-md:    16px;
+$font-size-lg:    18px;
+$font-size-xl:    20px;
+$font-size-xxl:   24px;
+$font-size-xxxl:  30px;
+$font-size-xxxxl: 36px;
+
+// Success
+$color-success:       #44B25C;
+$color-success-dark:  darken($color-success, 8%);
+$color-success-light: lighten($color-success, 8%);
+
+// Warning
+$color-warning:       #EBA15A;
+$color-warning-dark:  darken($color-warning, 8%);
+$color-warning-light: lighten($color-warning, 8%);
+
+// Danger
+$color-danger:        #eb685a;
+$color-danger-dark:   darken($color-danger, 8%);
+$color-danger-light:  lighten($color-danger, 8%);
+
+// Alias Danger
+$color-error:         $color-danger;
+$color-error-dark:    $color-danger-dark;
+$color-error-light:   $color-danger-light;
+
+// Info
+$color-info:          #6f84cb;
+$color-info-dark:     darken($color-info, 8%);
+$color-info-light:    lighten($color-info, 8%);
+
+// Default
+$color-default:       $color-white;
+$color-default-text:  $color-gray-dark;
+
+// Disabled
+$color-disabled:      $color-white-darker;
+$color-disabled-text: $color-white-darker-extra;
+
+

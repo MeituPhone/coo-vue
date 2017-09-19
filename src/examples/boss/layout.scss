@@ -1,0 +1,55 @@
+@import "../../assets/scss/global/variables";
+.layout {
+    &-header {
+        //border-top: 4px solid $color-green;
+        background-color: #ffffff;
+        box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
+        height: 60px;
+        position: relative;
+    }
+    &-auth{
+        float: right;
+        position: relative;
+        padding: 11px 30px 11px 60px;
+        img{
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            top: 11px;
+            left: 0px;
+        }
+        span{
+            display: block;
+        }
+        a{
+            color: $color-gray;
+            &:hover{
+                color: $color-link;
+                text-decoration: underline;
+            }
+        }
+    }
+    &-menus{
+        float: right;
+        margin-right: 50px;
+        a{
+            display: block;
+            height: 56px;
+            line-height: 56px;
+            float: left;
+            font-size: 18px;
+            padding: 0px 20px;
+            margin-right: 50px;
+            &.router-link-active {
+                border-bottom: 4px solid $color-green;
+                color: $color-green;
+            }
+            &:hover {
+                color: $color-green;
+            }
+        }
+    }
+    &-body{
+        min-height: 500px;
+    }
+}

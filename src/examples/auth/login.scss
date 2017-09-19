@@ -1,0 +1,133 @@
+@import "../../assets/scss/global/variables";
+.login{
+    &-header{
+        border-top: 4px solid $color-green;
+        //box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
+        background-color: #ffffff;
+        height: 60px;
+    }
+    &-body{
+        height: calc(100vh - 130px);
+        background-image: url(../../assets/images/bg.jpg);
+        background-size: cover;
+    }
+    &-main{
+        position: relative;
+        height: 100%;
+        max-width: $global-width;
+        margin: 0px auto;
+    }
+    &-content{
+        display: none;
+    }
+
+    &-box{
+        background-color: #ffffff;
+        padding: 25px 26px 30px 20px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        margin-right: -175px;
+        margin-top: -150px;
+        box-sizing: border-box;
+        width: 350px;
+        border-radius: 3px;
+        box-shadow: rgba(0,0,0,0.3) 0 0 50px;
+    }
+    &-title{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+
+    }
+    &-item{
+        margin-top: 20px;
+        position: relative;
+    }
+    &-icon{
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        margin-top: -8px;
+        width: 16px;
+        height: 18px;
+        vertical-align: middle;
+        display: inline-block;
+        &-user{
+            background: url(../../assets/images/sprite.png) 0 0 no-repeat;
+        }
+        &-pwd{
+            background: url(../../assets/images/sprite.png) 0 -22px no-repeat;
+        }
+    }
+    &-input{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        box-sizing: border-box;
+        border: 1px solid #e7e7eb;
+        padding: 3px 0 3px 54px;
+        outline: none;
+        &:focus{
+
+        }
+    }
+    &-to-reg{
+        float: left;
+        color: $color-link;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &-to-problem{
+        float: right;
+        color: $color-link;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 769px) {
+    .login {
+        &-body{
+            height: 700px;
+        }
+        &-box{
+            right: 0px;
+        }
+        &-content{
+            position: absolute;
+            bottom: 80px;
+            font-size: 44px;
+            color: #fff;
+            display: block;
+            p{
+                position: relative;
+                padding: 10px 100px;
+            }
+            .left-quote, .right-quote{
+                height: 32px;
+                width: 46px;
+            }
+            .left-quote{
+                background: url(../../assets/images/leftquote.png) top no-repeat;
+                display: inline-block;
+                position: absolute;
+                left: 40px;
+                top: 8px;
+            }
+
+            .right-quote{
+                background: url(../../assets/images/rightquote.png) top no-repeat;
+                display: inline-block;
+                position: absolute;
+                right: 40px;
+                top: 20px;
+            }
+        }
+    }
+}
+

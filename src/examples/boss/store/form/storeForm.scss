@@ -1,0 +1,38 @@
+@import "../../../../assets/scss/global/variables";
+.store{
+    &-form{
+        padding: 30px;
+        &-line{
+            margin-bottom: 20px;
+        }
+        &-label{
+            color: #666666;
+        }
+        &-label{
+            margin-bottom: 10px;
+        }
+        &-input{
+            height: 40px;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+            outline: none;
+            border: 1px solid #efefef;
+            transition: border-color 0.3s ease;
+            &:focus{
+                border-color: $color-link;
+            }
+        }
+        .jx-btn{
+            width: 200px;
+        }
+        &-delete{
+            color: #666;
+            text-align: center;
+            &:hover{
+                color: $color-link;
+                text-decoration: underline;
+            }
+        }
+    }
+}

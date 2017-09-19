@@ -1,0 +1,60 @@
+html, body{
+    background: #f7fafc;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    //font-family: "Avenir Next ST","Microsoft YaHei","PingFang SC";
+    -webkit-font-smoothing: antialiased;
+    color: $color-gray-darker;
+    font-size: $font-size-sm;
+    line-height: 1.5;
+}
+dd, dl, dt, p, nav, div, ul,li, header, h1, h2, h3, h4, h5, h6,iframe, button{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+}
+input{
+    color: $color-gray-dark;
+}
+a{
+    text-decoration:  none;
+    color: $color-gray-darker;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+ul, li{
+    list-style: none;
+}
+
+::-webkit-input-placeholder{
+    color: #c0c0c0;
+    font-size: 14px;
+}
+::-moz-placeholder{
+    color: #c0c0c0;
+    font-size: 14px;
+}
+:-ms-input-placeholder{
+    color: #c0c0c0;
+    font-size: 14px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.v-modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}

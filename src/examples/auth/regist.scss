@@ -1,0 +1,90 @@
+@import "../../assets/scss/global/variables";
+.register {
+    &-header {
+        border-top: 4px solid $color-green;
+        //box-shadow: 0 1px 2px rgba(150, 150, 150, 0.3);
+        background-color: #ffffff;
+        height: 60px;
+    }
+    &-body{
+        max-width: $global-width;
+        margin: 30px auto;
+        background-color: $color-white;
+        border: 1px solid #d9dadc;
+    }
+    &-title{
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #d9dadc;
+        background-color: #f4f5f9;
+        padding: 0px 20px;
+        color: #222;
+        font-size: 14px;
+    }
+    &-main{
+        padding: 50px;
+        position: relative;
+    }
+    &-form{
+        border-right: 1px solid #efefef;
+        width: 500px;
+        padding-right: 80px;
+    }
+    &-item{
+        margin-bottom: 30px;
+        .jx-btn{
+            width: 200px;
+            margin: 0px auto;
+        }
+    }
+    &-input{
+        height: 54px;
+        line-height: 54px;
+        box-sizing: border-box;
+        border: 1px solid #e7e7eb;
+        padding: 3px 0 3px 120px;
+        outline: none;
+        width: 100%;
+        transition: border-color 0.2s ease;
+        &:focus{
+            border-color: $color-link;
+        }
+        &-readonly{
+            background-color: #efefef;
+            &:focus{
+                border-color: #e7e7eb;
+            }
+        }
+    }
+    &-label{
+        position: absolute;
+        left: 20px;
+        height: 54px;
+        line-height: 54px;
+    }
+    &-word{
+        position: absolute;
+        right: 150px;
+        top: 50px;
+        a{
+            color: $color-link;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    &-item-relative{
+        .register-label{
+            position: relative;
+            left: 0px;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .register {
+        &-item{
+            position: relative;
+        }
+    }
+}
