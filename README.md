@@ -1,8 +1,6 @@
 # coo-vue
 some responsive component for vue
 
-<h2 align="center"> coo-vue </h2>
-
 
 ## Demonstration
 
