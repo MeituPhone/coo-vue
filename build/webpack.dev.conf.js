@@ -71,8 +71,8 @@ const webpackConfig = {
     plugins: [
         new Htmlplugin({
             filename: 'index.html',
-            template: resolve('src', 'index.js'),
-            chunks: [ 'common', 'app'],
+            template: resolve('src', 'index.html'),
+            chunks: [ 'vendor', 'app'],
             hash: true, // 为静态资源生成hash值
             inject: 'body',
             xhtml: true,

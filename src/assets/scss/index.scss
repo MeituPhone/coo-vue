@@ -2,7 +2,23 @@
 @import "./global/variables";
 @import "./global/font";
 @import "./global/common";
-html,body,#js-app{
+html{
+    background: #f1f1f1;
+}
+body{
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+html,body,#coo-app
+{
     height: 100%;
     width: 100%;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }

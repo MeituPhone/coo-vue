@@ -1,10 +1,7 @@
 //全局宽度
-$global-width: 1000px;
+$global-width: 1200px;
 
-$global-rem-number: ( 375 * 40 ) * 2 / 640;
-
-$color-green: #44B549;
-$color-link: #459ae9;
+$color-green: #3cc51f;
 // black
 $color-black: #000000;
 //  White
@@ -21,10 +18,6 @@ $color-gray-darker:   #333333;
 $color-gray-dark:     #555555;
 $color-gray:          #999999;
 $color-gray-light:    #cfcfcf;
-
-// pink
-$color-pink: #E62878;
-$color-pink-hover: #F8428F;
 
 // Border Radius
 $border-radius-default: 3px;
