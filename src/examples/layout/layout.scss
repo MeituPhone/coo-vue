@@ -1,0 +1,21 @@
+@import "../../assets/scss/global/variables";
+.layout{
+    max-width: $global-width;
+    margin: 0px auto;
+    position: relative;
+    height: 100%;
+    background-color: $color-white;
+    border: 1px solid #f2f2f2;
+    box-sizing: border-box;
+}
+
+.btn-back{
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: $color-green;
+    color: $color-white;
+    transition: background-color 0.2s ease;
+    &:hover{
+        background-color: #44B25C;
+    }
+}

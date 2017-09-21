@@ -9,52 +9,52 @@
         </div>
         <div class="website-components">
             <ul class="website-components-list clearfix">
-                <li class="component-item">
+                <li class="item">
+                    <router-link to="/components/uploader">
+                        <div class="icon">uploader</div>
+                        <div class="name">图片上传</div>
+                    </router-link>
+                </li>
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">uploader</div>
-                        <div class="component-name">图片上传</div>
+                        <div class="icon">areaSelect</div>
+                        <div class="name">地区选择</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">areaSelect</div>
-                        <div class="component-name">地区选择</div>
+                        <div class="icon">select</div>
+                        <div class="name">下拉选择</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">select</div>
-                        <div class="component-name">下拉选择</div>
+                        <div class="icon">baiduMap</div>
+                        <div class="name">百度地图</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">baiduMap</div>
-                        <div class="component-name">百度地图</div>
+                        <div class="icon">slider</div>
+                        <div class="name">幻灯片</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">slider</div>
-                        <div class="component-name">幻灯片</div>
+                        <div class="icon">countDown</div>
+                        <div class="name">倒计时</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">countDown</div>
-                        <div class="component-name">倒计时</div>
+                        <div class="icon">Toast</div>
+                        <div class="name">Toast</div>
                     </a>
                 </li>
-                <li class="component-item">
+                <li class="item">
                     <a href="">
-                        <div class="component-icon">Toast</div>
-                        <div class="component-name">Toast</div>
-                    </a>
-                </li>
-                <li class="component-item">
-                    <a href="">
-                        <div class="component-icon">Dialog</div>
-                        <div class="component-name">弹出框</div>
+                        <div class="icon">Dialog</div>
+                        <div class="name">弹出框</div>
                     </a>
                 </li>
             </ul>

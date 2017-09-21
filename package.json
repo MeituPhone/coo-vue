@@ -47,7 +47,6 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "@meitu/upload": "^1.8.5",
     "axios": "^0.16.1",
     "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.0",

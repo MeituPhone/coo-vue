@@ -22,3 +22,48 @@ html,body,#coo-app
     clear: both;
     visibility: hidden;
 }
+
+pre{
+    margin: 0px;
+}
+
+.component{
+    &-name{
+        text-align: center;
+        font-size: 30px;
+        color: $color-green;
+    }
+    &-description{
+        text-align: center;
+        color: $color-gray-darker;
+    }
+}
+
+.demo, .param{
+    margin-top: 15px;
+    &-title{
+        background-color: #efefef;
+        padding: 5px 10px;
+        color: $color-black;
+    }
+    &-box{
+        padding: 30px;
+    }
+}
+
+.param{
+    &-list{
+        padding: 10px 30px;
+    }
+    &-item{
+        margin-bottom: 20px;
+    }
+    &-desc{
+        h4{
+            color: $color-black;
+            font-weight: normal;
+        }
+        padding-left: 20px;
+        color: $color-gray;
+    }
+}
