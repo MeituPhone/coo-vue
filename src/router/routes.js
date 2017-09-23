@@ -1,6 +1,7 @@
 import Index from '../examples/index/index.vue';
 import Layout from '../examples/layout/layout.vue';
 import Uploader from '../examples/uploader/uploader.vue';
+import Dialog from '../examples/dialog/dialog.vue';
 // 设置页面元素
 const _setElement = (title, next) => {
     document.title = title;
@@ -25,7 +26,14 @@ const routes = [
                 path: 'uploader',
                 component: Uploader,
                 beforeEnter: (to, from, next) => {
-                    _setElement('uploader vue上传组件 - 打赏', next);
+                    _setElement('uploader vue上传组件 - CooVue', next);
+                }
+            },
+            {
+                path: 'dialog',
+                component: Dialog,
+                beforeEnter: (to, from, next) => {
+                    _setElement('Dialog 弹窗组件 - CooVue', next);
                 }
             }
         ]

@@ -52,10 +52,10 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <router-link to="/components/dialog">
                         <div class="icon">Dialog</div>
                         <div class="name">弹出框</div>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>
