@@ -1,121 +1,5 @@
 @import "../../assets/scss/global/variables";
 
-.coo-dialog {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
-    &-no-footer{
-        padding-bottom: 20px;
-    }
-    &-wrapper {
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        overflow: auto;
-        width: 100%;
-        margin: 0;
-        background-color: rgba(0,0,0,0.6);
-        .tiny {
-            width: 30%;
-        }
-
-        .small {
-            width: 50%;
-        }
-
-        .large {
-            width: 90%;
-            left: 5%;
-            transform: none;
-        }
-        .xmall{
-            width: 90%;
-        }
-        .full {
-            width: 100%;
-            top: 0;
-            margin-bottom: 0;
-            height: 100%;
-            overflow: auto;
-        }
-    }
-
-    &-header {
-        padding: 20px;
-        line-height: 20px;
-        box-sizing: border-box;
-        position: relative;
-        text-align: center;
-    }
-
-    &-close {
-        cursor: pointer;
-        &:hover:before {
-
-        }
-    }
-
-    &-title {
-        line-height: 1;
-        font-size: 16px;
-        //font-weight: bold;
-        color: #000000;
-    }
-
-    &-body {
-        padding:0px 20px;
-        color: #999;
-        font-size: 14px;
-        line-height: 25px;
-    }
-
-    &-headerbtn {
-        background: transparent;
-        border: none;
-        outline: none;
-        padding: 0;
-        cursor: pointer;
-        position: absolute;
-        font-size: 18px;
-        left: 15px;
-        top: 20px;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    &-footer {
-        padding-top: 20px;
-        text-align: center;
-        box-sizing: border-box;
-        line-height: 20px;
-        padding-bottom: 20px;
-        .mt-button{
-            margin: 0px 5px;
-        }
-    }
-
-    &-alert, &-success{
-        position: relative;
-        padding: 10px 30px 0px 120px;
-        &-title{
-            font-size: 25px;
-            color: $color-gray-darker;
-            margin-bottom: 10px;
-        }
-        .mt-icon {
-            position: absolute;
-            font-size: 55px;
-            top: 10px;
-            left: 30px;
-        }
-    }
-}
-
 .dialog-fade-enter-active {
     animation: dialog-fade-in 0.5s  linear;
 }
@@ -123,6 +7,7 @@
 .dialog-fade-leave-active {
     animation: dialog-fade-out 0.5s  linear;
 }
+
 
 @keyframes dialog-fade-in {
     0% {
@@ -143,30 +28,163 @@
 }
 
 
-@media only screen and (min-width: 768px) {
-    .coo-dialog {
-        &.xmall {
-            max-width: 500px;
-            top: 50% !important;
-            left: 50%;
-            transform: translate(-50%, -50%) !important;
-        }
-        &-header {
-            text-align: left;
-        }
-        &-headerbtn {
-            right: 15px;
-            left: auto;
-        }
+.dialog-scale-enter-active {
+    animation: dialog-scale-in 0.3s ease-out;
+}
+
+.dialog-scale-leave-active {
+    animation: dialog-scale-out 0.3s ease-out;
+}
+
+@keyframes dialog-scale-in {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
-@media only screen and (max-width: 768px) {
-    .mt-dialog {
-        &.xmall {
-            top: 50% !important;
-            left: 50%;
-            transform: translate(-50%, -50%) !important;
+@keyframes dialog-scale-out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.coo-dialog {
+    position: absolute;
+    left: 50%;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    &-content{
+        position: relative;
+    }
+    &-no-footer{
+        padding-bottom: 20px;
+    }
+    &-wrapper {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        overflow: auto;
+        width: 100%;
+        margin: 0;
+        background-color: rgba(0,0,0,0.6);
+    }
+
+    &-header {
+        padding: 13px 16px;
+        border-radius: 4px 4px 0 0;
+        background: #fff;
+        color: rgba(0,0,0,.65);
+        border-bottom: 1px solid #e9e9e9;
+        line-height: 1;
+        font-size: 16px;
+        color: #000000;
+    }
+    &-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: transparent;
+        border: none;
+        line-height: 20px;
+        outline: none;
+        padding: 0px;
+        display: inline-block;
+        .coo-icon{
+            font-size: 20px;
+            &:hover{
+                color: $color-green;
+            }
+        }
+    }
+    &-body {
+        padding: 16px;
+        line-height: 1.5;
+    }
+    &-footer {
+        border-top: 1px solid #e9e9e9;
+        padding: 10px 16px 10px 10px;
+        text-align: right;
+        border-radius: 0 0 4px 4px;
+        text-align: right;
+    }
+    &-btn{
+        display: inline-block;
+        padding: 0 15px;
+        font-size: 14px;
+        border-radius: 4px;
+        height: 32px;
+        background-color: #fff;
+        transition: all .3s cubic-bezier(.645,.045,.355,1);
+        border: 1px solid transparent;
+        outline: none;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+    &-cancel{
+        border-color: #d9d9d9;
+        &:active{
+            border-color: $color-green;
+            color: $color-green;
+        }
+    }
+    &-ok{
+        color: #ffffff;
+        border-color: $color-green;
+        background-color: $color-green;
+        &:active{
+            background-color: #108ee9;
+        }
+    }
+    &-type{
+        &-body{
+            position: relative;
+            padding: 50px 40px 0px 120px;/* no */
+        }
+        &-icon{
+            position: absolute;
+            left: 50px;/* no */
+            top: 40px;
+            .coo-icon{
+                font-size: 55px;/* no */
+                &.coo-icon-help, &.coo-icon-information{
+                    color: #10AEFF;
+                }
+                &.coo-icon-warning{
+                    color: #FFBE00;
+                }
+                &.coo-icon-success{
+                    color: $color-green;
+                }
+                &.coo-icon-wrong{
+                    color: #F76260;
+                }
+            }
+        }
+        &-title{
+            color: #000000;
+            font-size: 18px;/* no */
+            font-weight: 400;
+            line-height: 16px;/* no */
+        }
+        &-content{
+            margin-top: 10px;/* no */
+            font-size: 12px;
+            color: #888;
+        }
+        &-footer{
+            text-align: right;
+            padding-bottom: 20px;/* no */
+            padding-right: 40px;/* no */
         }
     }
 }
