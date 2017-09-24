@@ -28,10 +28,10 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <router-link to="/components/baidumap">
                         <div class="icon">baiduMap</div>
                         <div class="name">百度地图</div>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="item">
                     <a href="">

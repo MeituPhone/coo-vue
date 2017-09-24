@@ -2,6 +2,7 @@ import Index from '../examples/index/index.vue';
 import Layout from '../examples/layout/layout.vue';
 import Uploader from '../examples/uploader/uploader.vue';
 import Dialog from '../examples/dialog/dialog.vue';
+import BaiduMap from '../examples/baiduMap/baiduMap.vue';
 // 设置页面元素
 const _setElement = (title, next) => {
     document.title = title;
@@ -34,6 +35,13 @@ const routes = [
                 component: Dialog,
                 beforeEnter: (to, from, next) => {
                     _setElement('Dialog 弹窗组件 - CooVue', next);
+                }
+            },
+            {
+                path: 'baidumap',
+                component: BaiduMap,
+                beforeEnter: (to, from, next) => {
+                    _setElement('Baidu地图组件 - CooVue', next);
                 }
             }
         ]
