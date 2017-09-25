@@ -1,0 +1,68 @@
+@import '../../assets/scss/global/variables';
+.coo-slider{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &-inner{
+        width: 100%;
+        overflow: hidden;
+    }
+    &-wraper{
+        height: 100%;
+    }
+    &-item{
+        float: left;
+    }
+    &-image{
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    &-pagination{
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    &-page{
+        height: 8px;
+        width: 8px;
+        border-radius: 8px;
+        margin-right: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        cursor: pointer;
+        &-active{
+            background-color: $color-green;
+            opcity: 0.3;
+        }
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+    &-prev, &-next{
+        position: absolute;
+        top: 50%;
+        width: 41px;
+        height: 69px;
+        margin-top: -35px;
+        background-image: url(../../assets/images/icon-slides.png);
+        background-repeat: no-repeat;
+    }
+    &-prev{
+        left:10px;
+        background-position: -84px 50%;
+        &:hover{
+            background-position: 0 50%
+        }
+    }
+    &-next{
+        right: 10px;
+        background-position: -125px 50%;
+        &:hover{
+
+            background-position: -42px 50%;
+        }
+    }
+}

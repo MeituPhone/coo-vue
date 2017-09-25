@@ -1,10 +1,10 @@
 <template>
     <div class="component-layout">
         <div class="component-name">
-            uploader 图片上传<br />
+            标度地图组件<br />
         </div>
         <div class="component-description">
-            这是一个允许自定义上传图片张数的vue图片异步上传组件...
+            这是一个百度地图组件，允许自定义标注标题、地址等信息...
         </div>
         <div class="demo">
             <div class="demo-title">1、demo演示</div>

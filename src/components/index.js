@@ -5,7 +5,9 @@
 import uploader from './uploader/uploader.vue';
 import dialog from './dialog/dialog.vue';
 import baiduMap from './baiduMap/baiduMap.vue';
+import slider from './slider/slider.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
 export const BaiduMap = baiduMap;
+export const Slider = slider;

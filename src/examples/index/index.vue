@@ -34,10 +34,10 @@
                     </router-link>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <router-link to="/components/slider">
                         <div class="icon">slider</div>
                         <div class="name">幻灯片</div>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="item">
                     <a href="">
