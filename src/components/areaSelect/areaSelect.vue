@@ -8,12 +8,12 @@
         </div>
         <div class="coo-area-mask" v-show="show"></div>
         <div class="coo-area-body" v-show="show">
-            <div class="coo-area-title">所在地区<button class="coo-area-close" @click="handleClose"><mt-icon type="delete"></mt-icon></button></div>
+            <div class="coo-area-title">所在地区<button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button></div>
             <div class="coo-area-tab clearfix">
                 <span @click="handleTabProvince" class="coo-area-tabitem" :class="{active: tab === 'province'}">{{ selected.province.id ? selected.province.name : '请选择' }}</span>
                 <span @click="handleTabCity" class="coo-area-tabitem" :class="{active: tab === 'city'}" v-if="selected.province.id">{{ selected.city.id ? selected.city.name : '请选择' }}</span>
                 <span @click="handleTabCountry" class="coo-area-tabitem" :class="{active: tab === 'country'}" v-if="selected.city.id">{{ selected.country.id ? selected.country.name : '请选择' }}</span>
-                <button class="coo-area-close" @click="handleClose"><mt-icon type="delete"></mt-icon></button>
+                <button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button>
             </div>
             <div class="coo-area-list">
                 <dl class="province-list" v-show="tab==='province'">
