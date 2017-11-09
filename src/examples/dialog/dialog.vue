@@ -47,16 +47,15 @@
                 <div class="param-item">9：cancel：是否显示取消按钮，类型：Boolean，默认：true</div>
                 <div class="param-item">10：cancelLabel：取消按钮，类型：String，默认：'取消'</div>
                 <div class="param-item">11：timeout：自动关闭时间，类型：Number，默认：0</div>
+                <div class="param-item">12：beforeClose(done)：cancel前执行，类型：Function，默认：0</div>
+                <div class="param-item">13：beforeCok(done)：ok前执行，类型：Function，默认：0</div>
             </div>
         </div>
 
         <div class="param">
             <div class="param-title">3、事件</div>
             <div class="param-list">
-                <div class="param-item">1: cancel：点击取消按钮时触发
-                </div>
-                <div class="param-item">2: ok: 点击确认按钮时触发
-                </div>
+
             </div>
         </div>
 

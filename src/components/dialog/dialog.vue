@@ -1,50 +1,48 @@
 <template>
     <transition name="dialog-fade">
         <div class="coo-dialog-wrapper" v-show="visible" @click.self="handleWrapperClick">
-            <transition name="dialog-scale">
-                <div
-                        v-if="type==='dialog'"
-                        class="coo-dialog"
-                        :class="[!ok && !cancel ? 'mt-dialog-no-footer' : '']"
-                        ref="dialog"
-                        v-show="visible"
-                        :style="style"
-                >
-                    <button class="coo-dialog-close" @click="handleClose"><coo-icon type="cancel"></coo-icon></button>
-                    <div class="coo-dialog-header" v-if="!!title">
-                        {{title}}
+            <div
+                    v-if="type==='dialog'"
+                    class="coo-dialog"
+                    :class="[!ok && !cancel ? 'mt-dialog-no-footer' : '']"
+                    ref="dialog"
+                    v-show="visible"
+                    :style="style"
+            >
+                <button class="coo-dialog-close" @click="handleClose"><coo-icon type="cancel"></coo-icon></button>
+                <div class="coo-dialog-header" v-if="!!title">
+                    {{title}}
+                </div>
+                <div class="coo-dialog-body">
+                    <slot></slot>
+                </div>
+                <div class="coo-dialog-footer" v-if="ok || cancel">
+                    <button class="coo-dialog-btn coo-dialog-cancel" v-if="cancel" @click="handleClose">{{ cancelLabel }}</button>
+                    <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
+                </div>
+            </div>
+
+            <div
+                    v-if="type!=='dialog'"
+                    class="coo-dialog"
+                    :class="[!ok && !cancel ? 'mt-dialog-no-footer' : '']"
+                    ref="dialog"
+                    v-show="visible"
+                    :style="style"
+            >
+                <div class="coo-dialog-body coo-dialog-type-body" :class="[`coo-dialog-${type}`]">
+                    <div class="coo-dialog-type-icon">
+                        <coo-icon :type="type"></coo-icon>
                     </div>
-                    <div class="coo-dialog-body">
+                    <div class="coo-dialog-type-title">{{title}}</div>
+                    <div class="coo-dialog-type-content">
                         <slot></slot>
                     </div>
-                    <div class="coo-dialog-footer" v-if="ok || cancel">
-                        <button class="coo-dialog-btn coo-dialog-cancel" v-if="cancel" @click="handleClose">{{ cancelLabel }}</button>
-                        <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
-                    </div>
                 </div>
-
-                <div
-                        v-if="type!=='dialog'"
-                        class="coo-dialog"
-                        :class="[!ok && !cancel ? 'mt-dialog-no-footer' : '']"
-                        ref="dialog"
-                        v-show="visible"
-                        :style="style"
-                >
-                    <div class="coo-dialog-body coo-dialog-type-body" :class="[`coo-dialog-${type}`]">
-                        <div class="coo-dialog-type-icon">
-                            <coo-icon :type="type"></coo-icon>
-                        </div>
-                        <div class="coo-dialog-type-title">{{title}}</div>
-                        <div class="coo-dialog-type-content">
-                            <slot></slot>
-                        </div>
-                    </div>
-                    <div class="coo-dialog-type-footer">
-                        <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
-                    </div>
+                <div class="coo-dialog-type-footer">
+                    <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
                 </div>
-            </transition>
+            </div>
         </div>
     </transition>
 </template>
@@ -133,8 +131,6 @@
             style () {
                 return {
                     'width': `${this.width}px`,
-                    'top': this.top ? this.top : '50%',
-                    'margin-left': `-${parseInt(this.width / 2)}px`,
                 };
             },
         },

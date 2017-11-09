@@ -75,6 +75,10 @@ export const addEventListener = (() => {
 // 获取滚动条宽度
 let scrollBarWidth;
 export const SCROLL_BAR_WIDTH = () => {
+    if (window.innerHeight >= document.body.offsetHeight) {
+        return 0;
+    }
+
     if (scrollBarWidth !== undefined) return scrollBarWidth;
     const outer = document.createElement('div');
     outer.className = 'coo-scrollbar__wrap';
@@ -93,8 +97,8 @@ export const SCROLL_BAR_WIDTH = () => {
 
     const widthWithScroll = inner.offsetWidth;
     outer.parentNode.removeChild(outer);
-
-    return widthNoScroll - widthWithScroll;
+    scrollBarWidth = widthNoScroll - widthWithScroll;
+    return scrollBarWidth;
 };
 
 // 设置屏幕滚动

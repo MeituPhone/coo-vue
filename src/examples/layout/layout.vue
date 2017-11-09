@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <a class="btn-back" href="/" data-reactid=".0.0">←返回</a>
+        <router-link class="btn-back"  to="/">←返回</router-link>
         <router-view></router-view>
     </div>
 </template>
