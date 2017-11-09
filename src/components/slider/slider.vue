@@ -7,7 +7,8 @@
                  @touchend="onTouchEnd"
                  :style="{width: `${this.wrapperWidth}px`, transform: translateValue, 'transition-duration': (touching || !isTransition) ? '0ms' : '300ms'}">
                 <slider-item :key="-1" :image="images[images.length - 1]" :width="width"></slider-item>
-                <slider-item v-for="(image, index) in images" :key="index" :image="image" :width="width"></slider-item>
+
+                <slot></slot>
                 <slider-item  :key="images.length" :image="images[0]" :width="width"></slider-item>
             </div>
         </div>
@@ -39,10 +40,6 @@
             sliderItem: sliderItem,
         },
         props: {
-            images: {
-                type: Array,
-                default: []
-            },                                  // 幻灯片列表
             loop: {
                 type: Boolean,
                 default: false

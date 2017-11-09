@@ -15,6 +15,7 @@
                     :visible.sync="visible"
                     :type="type"
                     title="弹出框"
+                    :lock="true"
                 >
                     <div class="">
                         测试dialog

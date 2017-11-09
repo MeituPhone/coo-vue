@@ -1,6 +1,6 @@
 <template>
     <div class="coo-slider-item" :style="{width: `${width}px`}">
-        <img :src="image" class="coo-slider-image" :draggable="false" />
+        <slot></slot>
     </div>
 </template>
 <script>

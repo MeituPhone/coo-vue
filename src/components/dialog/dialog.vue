@@ -51,8 +51,10 @@
 
 <script>
     import CooIcon from '../icon/icon.vue';
+    import dialogManager from './dialogManager';
     export default {
         name: 'coo-dialog',
+        mixins: [dialogManager],
         model: {
             prop: 'visible',
             event: 'visible-change',
@@ -86,6 +88,8 @@
                 type: String,
                 default: '20%',
             },
+            beforeOk: Function,
+            beforeCancel: Function,
             ok: {
                 type: Boolean,
                 default: true,
@@ -106,6 +110,10 @@
                 type: Number,
                 default: 0,
             },
+            appendToBody: {
+                type: Boolean,
+                default: false
+            }
         },
         components: {
             CooIcon: CooIcon,
@@ -118,10 +126,6 @@
                             this.handleClose();
                         }, this.timeout);
                     }
-                    document.getElementsByTagName('html')[0].style.overflow = 'hidden';
-                } else {
-                    this.$emit('close');
-                    document.getElementsByTagName('html')[0].style.overflow = '';
                 }
             },
         },
@@ -139,14 +143,20 @@
                 this.handleClose();
             },
             handleClose () {
-                this.$emit('cancel');
-                this.hide();
+                if (typeof this.beforeClose === 'function') {
+                    this.beforeClose(this.hide);
+                } else {
+                    this.hide();
+                }
             },
             handleOk () {
-                this.$emit('ok');
-                this.hide();
+                if (typeof this.beforeOk === 'function') {
+                    this.beforeOk(this.hide);
+                } else {
+                    this.hide();
+                }
             },
-            hide (cancel) {
+            hide () {
                 this.$emit('update:visible', false);
             },
         },

@@ -4,6 +4,8 @@ import Uploader from '../examples/uploader/uploader.vue';
 import Dialog from '../examples/dialog/dialog.vue';
 import BaiduMap from '../examples/baiduMap/baiduMap.vue';
 import Slider from '../examples/slider/slider.vue';
+import AreaSelect from '../examples/areaSelect/areaSelect.vue';
+
 // 设置页面元素
 const _setElement = (title, next) => {
     document.title = title;
@@ -50,6 +52,13 @@ const routes = [
                 component: Slider,
                 beforeEnter: (to, from, next) => {
                     _setElement('幻灯片组件 - CooVue', next);
+                }
+            },
+            {
+                path: 'areaSelect',
+                component: AreaSelect,
+                beforeEnter: (to, from, next) => {
+                    _setElement('地区选择组件 - CooVue', next);
                 }
             }
         ]
