@@ -1,48 +1,47 @@
 <template>
-    <div class="coo-slider" ref="coo-slider" v-bind:active-index="currentIndex">
-        <div class="coo-slider-inner">
-            <div class="coo-slider-wrapper clearfix"
+    <div class="coo-swiper" ref="coo-swiper" v-bind:active-index="currentIndex">
+        <div class="coo-swiper-inner">
+            <div class="coo-swiper-wrapper clearfix"
                  @touchstart="onTouchDown"
                  @touchmove="onTouchMove"
                  @touchend="onTouchEnd"
+                 ref="slider-wrapper"
                  :style="{width: `${this.wrapperWidth}px`, transform: translateValue, 'transition-duration': (touching || !isTransition) ? '0ms' : '300ms'}">
-                <slider-item :key="-1" :image="images[images.length - 1]" :width="width"></slider-item>
-
                 <slot></slot>
-                <slider-item  :key="images.length" :image="images[0]" :width="width"></slider-item>
             </div>
         </div>
-        <div v-if="images.length > 1" class="coo-slider-pagination clearfix">
-            <div class="coo-slider-page icon"
-                 v-for="(item, index) in images"
-                 :class="[((index === currentIndex) || (index === 0 && currentIndex === images.length) || (index === images.length - 1 && currentIndex === -1)) ? 'coo-slider-page-active' : '']"
+        <div v-if="sliderLength > 1" class="coo-swiper-pagination clearfix">
+            <div class="coo-swiper-page icon"
+                 v-if="pagination"
+                 v-for="(item, index) in sliderLength"
+                 :class="[((index === currentIndex) || (index === 0 && currentIndex === sliderLength) || (index === sliderLength - 1 && currentIndex === -1)) ? 'coo-swiper-page-active' : '']"
                  @click="onClickPage(index)"></div>
         </div>
         <a href="javascript:;"
-           v-if="(currentIndex !== 0  || loop) && images.length >1"
-           class="coo-slider-prev"
+           v-if="(currentIndex !== 0  || loop) && sliderLength >1"
+           class="coo-swiper-prev"
            @click="onPrev">
             <span class="mt-icon mt-icon-left"></span>
         </a>
         <a href="javascript:;"
-           v-if="(currentIndex !== images.length - 1 || loop) && images.length >1"
-           class="coo-slider-next"
+           v-if="(currentIndex !== sliderLength - 1 || loop) && sliderLength >1"
+           class="coo-swiper-next"
            @click="onNext">
             <span class="mt-icon mt-icon-right"></span>
         </a>
     </div>
 </template>
 <script>
-    import sliderItem from './sliderItem.vue';
     export default {
-        name: 'coo-slider',
-        components: {
-            sliderItem: sliderItem,
-        },
+        name: 'coo-swiper',
         props: {
             loop: {
                 type: Boolean,
-                default: false
+                default: true
+            },                                  // 是否循环
+            pagination: {
+                type: Boolean,
+                default: true
             },                                  // 是否循环
         },
         data () {
@@ -62,24 +61,23 @@
                 differenceX: 0,
                 canSlide: true,                // 手势判断
                 isStart: true,                  // 是否刚开始
-                translateValue: ''
+                translateValue: '',
+                sliderLength: 0,
             };
         },
         watch: {
-            images () {
-                this.init();
-            },
             translateX (value) {
                 this.translateValue = `translate(${value}px, 0) translateZ(0)`;
             }
         },
         methods: {
             setIndex (index) {
+                let oldIndex = this.currentIndex;
                 if (!this.loop) {
                     if (index === -1) {
                         this.currentIndex = 0;
-                    } else if (index === this.images.length) {
-                        this.currentIndex = this.images.length - 1;
+                    } else if (index === this.$children.length) {
+                        this.currentIndex = this.sliderLength - 1;
                     } else {
                         this.currentIndex = index;
                     }
@@ -87,6 +85,9 @@
                     this.currentIndex = index;
                 }
                 this.translateX = -((this.currentIndex + 1) * this.width);
+                if (oldIndex !== this.currentIndex) {
+                    this.$emit('success', this.currentIndex);
+                }
             },
             // 点击上一张
             onPrev () {
@@ -95,13 +96,13 @@
                 }
                 if (this.currentIndex === -1) {
                     this.isTransition = false;
-                    this.setIndex(this.images.length - 1);
+                    this.setIndex(this.sliderLength - 1);
                     this.startTranslateX = this.translateX;
                     setTimeout(() => {
                         this.isTransition = true;
                         this.setIndex(this.currentIndex - 1);
                     }, 10);
-                } else if (this.currentIndex === this.images.length) {
+                } else if (this.currentIndex === this.sliderLength) {
                     this.isTransition = false;
                     this.setIndex(0);
                     this.startTranslateX = this.translateX;
@@ -112,22 +113,23 @@
                 } else {
                     this.setIndex(this.currentIndex - 1);
                 }
+                this.$emit('prev');
             },
             // 点击下一张
             onNext () {
-                if (this.currentIndex === this.images.length - 1 && !this.loop) {
+                if (this.currentIndex === this.sliderLength - 1 && !this.loop) {
                     return false;
                 }
 
                 if (this.currentIndex === -1) {
                     this.isTransition = false;
-                    this.setIndex(this.images.length - 1);
+                    this.setIndex(this.sliderLength - 1);
                     this.startTranslateX = this.translateX;
                     setTimeout(() => {
                         this.isTransition = true;
                         this.setIndex(this.currentIndex + 1);
                     }, 10);
-                } else if (this.currentIndex === this.images.length) {
+                } else if (this.currentIndex === this.sliderLength) {
                     this.isTransition = false;
                     this.setIndex(0);
                     this.startTranslateX = this.translateX;
@@ -138,6 +140,7 @@
                 } else {
                     this.setIndex(this.currentIndex + 1);
                 }
+                this.$emit('next');
             },
             // 点击特定页
             onClickPage (index) {
@@ -160,11 +163,11 @@
                 this.startX = event.clientX;
                 this.startTranslateX = this.translateX;
                 if (this.currentIndex === -1) {
-                    this.setIndex(this.images.length - 1);
+                    this.setIndex(this.sliderLength - 1);
                     this.startTranslateX = this.translateX;
                 }
 
-                if (this.currentIndex === this.images.length) {
+                if (this.currentIndex === this.sliderLength) {
                     this.setIndex(0);
                     this.startTranslateX = this.translateX;
                 }
@@ -176,7 +179,7 @@
                 }
             },
             onTouchStart (event) {
-                if (this.images.length <= 1) {
+                if (this.sliderLength <= 1) {
                     return false;
                 }
 
@@ -186,11 +189,11 @@
                 this.startTranslateX = this.translateX;
                 this.isStart = true;
                 if (this.currentIndex === -1) {
-                    this.setIndex(this.images.length - 1);
+                    this.setIndex(this.sliderLength - 1);
                     this.startTranslateX = this.translateX;
                 }
 
-                if (this.currentIndex === this.images.length) {
+                if (this.currentIndex === this.sliderLength) {
                     this.setIndex(0);
                     this.startTranslateX = this.translateX;
                 }
@@ -201,7 +204,7 @@
                     let differenceY = event.touches[0].clientY - this.startY;
                     // 不循环
                     if (!this.loop) {
-                        if ((this.currentIndex === 0 && this.differenceX > 0) || (this.currentIndex === this.images.length - 1 && this.differenceX < 0)) {
+                        if ((this.currentIndex === 0 && this.differenceX > 0) || (this.currentIndex === this.sliderLength - 1 && this.differenceX < 0)) {
                             return false;
                         }
                     }
@@ -230,24 +233,28 @@
                 }
                 this.canSlide = true;
             },
-            init () {
-                let width = this.$refs['coo-slider'].offsetWidth;
-                this.width = width;
-                this.wrapperWidth = (this.images.length + 2) * width;
-                this.setIndex(0);
-                setTimeout(() => {
-                    this.isTransition = true;
-                }, 300);
-            }
         },
         mounted () {
-            this.init();
+            let width = this.$refs['coo-swiper'].offsetWidth;
+            this.width = width;
+            this.sliderLength = this.$children.length;
+            this.wrapperWidth = (this.sliderLength + 2) * width;
+            let dom = this.$refs['slider-wrapper'];
+            dom.insertBefore(this.$children[0].$el.cloneNode(true), dom.children[dom.children.length]);
+            dom.insertBefore(this.$children[this.sliderLength - 1].$el.cloneNode(true), dom.children[0]);
+            dom.children[0].style.width = `${this.width}px`;
+            dom.children[dom.children.length - 1].style.width = `${this.width}px`;
+            this.setIndex(0);
+            setTimeout(() => {
+                this.isTransition = true;
+            }, 300);
         },
         created () {
+
         },
         beforeDestroy () {
         }
     };
 </script>
-<style lang="scss" rel="stylesheet/scss" src="./slider.scss">
+<style lang="scss" rel="stylesheet/scss" src="./swiper.scss">
 </style>

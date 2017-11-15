@@ -3,7 +3,7 @@ import Layout from '../examples/layout/layout.vue';
 import Uploader from '../examples/uploader/uploader.vue';
 import Dialog from '../examples/dialog/dialog.vue';
 import BaiduMap from '../examples/baiduMap/baiduMap.vue';
-import Slider from '../examples/slider/slider.vue';
+import Swiper from '../examples/swiper/swiper.vue';
 import AreaSelect from '../examples/areaSelect/areaSelect.vue';
 
 // 设置页面元素
@@ -48,8 +48,8 @@ const routes = [
                 }
             },
             {
-                path: 'slider',
-                component: Slider,
+                path: 'swiper',
+                component: Swiper,
                 beforeEnter: (to, from, next) => {
                     _setElement('幻灯片组件 - CooVue', next);
                 }

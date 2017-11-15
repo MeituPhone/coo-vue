@@ -3,5 +3,5 @@
         ["stage-1"],
         ["es2015",  {"modules": false}]
     ],
-    "plugins": ["transform-runtime"]
+    "plugins": ["transform-runtime", "transform-vue-jsx"]
 }

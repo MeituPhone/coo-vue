@@ -6,11 +6,13 @@ import './scss/index.scss';
 import uploader from './uploader/uploader.vue';
 import dialog from './dialog/dialog.vue';
 import baiduMap from './baiduMap/baiduMap.vue';
-import slider from './slider/slider.vue';
+import swiper from './swiper/swiper.vue';
+import swiperItem from './swiper/swiperItem.vue';
 import areaSelect from './areaSelect/areaSelect.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
 export const BaiduMap = baiduMap;
-export const Slider = slider;
+export const Swiper = swiper;
+export const SwiperItem = swiperItem;
 export const AreaSelect = areaSelect;

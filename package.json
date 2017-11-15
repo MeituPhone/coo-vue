@@ -43,12 +43,15 @@
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.3.2",
     "webpack": "^2.4.1",
+    "babel-plugin-syntax-jsx": "^6.8.0",
+    "babel-plugin-transform-vue-jsx": "^3.3.0",
     "webpack-dev-server": "^2.4.2",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.26.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.0",
     "bluebird": "^3.5.0",
     "es6-promise": "^4.1.1",
     "es6-promise-polyfill": "^1.2.0",

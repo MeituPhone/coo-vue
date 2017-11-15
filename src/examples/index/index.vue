@@ -22,8 +22,8 @@
                     </router-link>
                 </li>
                 <li class="item">
-                    <router-link to="/components/slider">
-                        <div class="icon">slider</div>
+                    <router-link to="/components/swiper">
+                        <div class="icon">swiper</div>
                         <div class="name">幻灯片</div>
                     </router-link>
                 </li>

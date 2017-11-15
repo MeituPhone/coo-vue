@@ -1,13 +1,14 @@
 @import '../../assets/scss/global/variables';
-.coo-slider{
+.coo-swiper{
     width: 100%;
     height: 100%;
     position: relative;
     &-inner{
         width: 100%;
+        height: 100%;
         overflow: hidden;
     }
-    &-wraper{
+    &-wrapper{
         height: 100%;
     }
     &-item{
@@ -64,5 +65,10 @@
 
             background-position: -42px 50%;
         }
+    }
+
+    &-item{
+        height: 100%;
+        float: left;
     }
 }

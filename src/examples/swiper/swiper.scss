@@ -1,0 +1,32 @@
+.demo-slider{
+    width: 500px;
+    max-width: 100%;
+    height: 300px;
+}
+.swiper{
+    &-01{
+        background-color: #000;
+        height: 100%;
+        line-height: 300px;
+        color: #fff;
+        text-align: center;
+        a{
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+    &-02{
+        background-color: #ff0000;
+        height: 100%;
+        line-height: 300px;
+        color: #fff;
+        text-align: center;
+    }
+    &-03{
+        background-color: #233432;
+        height: 100%;
+        line-height: 300px;
+        color: #fff;
+        text-align: center;
+    }
+}
