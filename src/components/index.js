@@ -9,6 +9,7 @@ import baiduMap from './baiduMap/baiduMap.vue';
 import swiper from './swiper/swiper.vue';
 import swiperItem from './swiper/swiperItem.vue';
 import areaSelect from './areaSelect/areaSelect.vue';
+import lazyImg from './lazyImg/lazyImg.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -16,3 +17,4 @@ export const BaiduMap = baiduMap;
 export const Swiper = swiper;
 export const SwiperItem = swiperItem;
 export const AreaSelect = areaSelect;
+export const LazyImg = lazyImg;

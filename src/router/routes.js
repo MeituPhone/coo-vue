@@ -5,6 +5,7 @@ import Dialog from '../examples/dialog/dialog.vue';
 import BaiduMap from '../examples/baiduMap/baiduMap.vue';
 import Swiper from '../examples/swiper/swiper.vue';
 import AreaSelect from '../examples/areaSelect/areaSelect.vue';
+import LazyImg from '../examples/lazyImg/lazyImg.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -59,6 +60,13 @@ const routes = [
                 component: AreaSelect,
                 beforeEnter: (to, from, next) => {
                     _setElement('地区选择组件 - CooVue', next);
+                }
+            },
+            {
+                path: 'lazyImg',
+                component: LazyImg,
+                beforeEnter: (to, from, next) => {
+                    _setElement('图片懒加载左键 - CooVue', next);
                 }
             }
         ]

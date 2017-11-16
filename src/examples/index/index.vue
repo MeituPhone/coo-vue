@@ -26,6 +26,12 @@
                         <div class="icon">swiper</div>
                         <div class="name">幻灯片</div>
                     </router-link>
+                </li>           
+                <li class="item">
+                    <router-link to="/components/lazyImg">
+                        <div class="icon">lazyImg</div>
+                        <div class="name">懒加载</div>
+                    </router-link>
                 </li>
                 <li class="item">
                     <router-link to="/components/baidumap">

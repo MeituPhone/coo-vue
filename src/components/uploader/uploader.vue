@@ -8,7 +8,7 @@
         </div>
         <button v-if="images.length < length && !readonly" class="coo-uploader-btn" @click="handleClick">
             <span v-show="!uploading" class="jx-icon-add"></span>
-            <span v-show="uploading" class="coo-uploader-loading"></span>
+            <span v-show="uploading" class="coo-loading"></span>
             <input  type="file" class="coo-uploader-file" ref="uploader-file" @change="handleChange" />
         </button>
     </div>
