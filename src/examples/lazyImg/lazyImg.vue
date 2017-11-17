@@ -17,7 +17,8 @@
                <div class="demo-box-2">
                 <a href="javascript:;" @click="autoLoad2 = true">测试加载下面的图片</a>
                 <coo-lazy-img 
-                    src="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/750" thumb="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/50"
+                    src="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/750" 
+                    thumb="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/50"
                     :autoLoad="autoLoad2"
                     :mum="true"
                     ></coo-lazy-img>
@@ -31,10 +32,11 @@
             </div>
             <div class="demo-code">
                 <pre>
-&lt;coo-dialog
-        :visible.sync="visible"
-        :type="type"
-        title="弹出框"
+&lt;coo-lazy-img 
+        src="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/750"
+        thumb="https://mtshop1.meitudata.com/59f83fdbba2a016372.jpg?imageView2/2/w/50"
+        :autoLoad="true"
+        :mum="true"
         &gt;
         测试dialog
 &lt;/coo-dialog&gt;</pre>
