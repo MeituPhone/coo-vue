@@ -3,8 +3,8 @@
         <div class="website-header">
             <div class="website-name">CooVue</div>
             <p class="website-description">
-                我不想重复造轮子，但是这些是我经常用的vue响应式组件<br />
-                github 仓库地址：<a href="https://github.com/coocssweb/react-plug">https://github.com/coocssweb/react-plug</a>
+                我不想重复造轮子，但是这些是我工作中经常用的vue响应式组件<br />
+                github 仓库地址：<a href="https://github.com/coocssweb/coo-vue">https://github.com/coocssweb/coo-vue</a>
             </p>
         </div>
         <div class="website-components">

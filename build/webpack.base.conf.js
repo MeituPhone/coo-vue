@@ -28,7 +28,7 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
             template: resolve('src', 'index.html'),
             chunks: ['vendor', 'app'],
             hash: true,
-            inject: 'body',
+            inject: 'head',
             xhtml: true,
             minify: {
                 removeComments: true,

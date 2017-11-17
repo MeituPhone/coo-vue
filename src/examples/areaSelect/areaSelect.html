@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>vue地区选择器组件 - CooVue</title>
+    <meta name="description" content="这是一个地区选择器组件，支持响应式，在PC端和移动端都有不错的体验，参考各大网站的地址编辑器。地址库是一份树形结构的数据。">
+    <meta name="keywords" content='vue地区选择器,地区选择器组件,响应式地区选择器' />
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+</head>
+<body>
+    <div class="component-layout">
+        <div class="component-name">
+            地区选择器<br />
+        </div>
+        <div class="component-description">
+            这是一个响应式的地区选择器组件，参考各购物网站的地区选择器.....
+        </div>
+        <div id="coo-app">
+            
+        </div>
+          <div class="demo-code">
+            <pre>&lt;coo-area-select
+                    :province="{}"
+                    :city="{}"
+                    :country="{}"
+                    @select="handleSelectArea"
+            &gt;&lt;/coo-area-select&gt; </pre>
+        </div>
+        <div class="param">
+            <div class="param-title">2、参数说明</div>
+            <div class="param-list">
+                <div class="param-item">1：province：默认省份 , 类型：{id: 1, name: ''}</div>
+                <div class="param-item">2：city：默认城市，类型：{id: 1, name: ''}</div>
+                <div class="param-item">3：country：默认地区，类型：{id: 1, name: ''}</div>
+                <div class="param-item">4：handleSelectArea：标注标题，类型：Function(object)</div>
+            </div>
+        </div>
+
+        <div class="param">
+            <div class="param-title">3、事件</div>
+        </div>
+
+    </div>
+</body>
+</html>

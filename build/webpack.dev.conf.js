@@ -74,7 +74,7 @@ const webpackConfig = {
             template: resolve('src', 'index.html'),
             chunks: [ 'vendor', 'app'],
             hash: true, // 为静态资源生成hash值
-            inject: 'body',
+            inject: 'head',
             xhtml: true,
             minify: {
                 removeComments: true,
