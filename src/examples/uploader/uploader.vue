@@ -46,9 +46,21 @@
                         类型：Boolean, 默认值：false
                     </div>
                 </div>
+
                 <div class="param-item">4: length：最多可上传数
                     <div class="param-desc">
                         类型：Number, 默认值：10
+                    </div>
+                </div>
+
+                 <div class="param-item">5: mum：显示加载菊花
+                    <div class="param-desc">
+                        Boolean, 默认值：true
+                    </div>
+                </div>
+                <div class="param-item">6: needConfirm：删除是显示确认框
+                    <div class="param-desc">
+                        Boolean, 默认值：true
                     </div>
                 </div>
             </div>

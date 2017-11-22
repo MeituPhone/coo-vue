@@ -1,7 +1,7 @@
 <template>
     <div class="component-layout">
         <div class="component-name">
-            Slider 幻灯片<br />
+            Swiper 幻灯片<br />
         </div>
         <div class="component-description">
             这是一个允许响应式的幻灯片组件 ...
@@ -24,11 +24,14 @@
                 </div>
             </div>
             <div class="demo-code">
-                <pre>&lt;oo-swiper :loop="true"&gt;
-                &lt;coo-swiper-item&gt;
-                &lt;div class="swiper-01"&gt;&lt;a href='javascript:;' @click="handleTestClick">第一屏&lt;/a&gt;&lt;/div&gt;
-                &lt;/coo-swiper-item&gt;
-                &lt;/coo-swiper&gt;</pre>
+                <pre>&lt;coo-swiper :loop="true"&gt;
+    &lt;coo-swiper-item&gt;
+    ...
+    &lt;/coo-swiper-item&gt;
+    &lt;coo-swiper-item&gt;
+    ...
+    &lt;/coo-swiper-item&gt;
+&lt;/coo-swiper&gt;</pre>
             </div>
         </div>
         <div class="param">

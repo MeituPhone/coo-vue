@@ -149,14 +149,14 @@
     &-type{
         &-body{
             position: relative;
-            padding: 50px 40px 0px 120px;/* no */
+            padding: 50px 40px 10px 120px;
         }
         &-icon{
             position: absolute;
-            left: 50px;/* no */
+            left: 50px;
             top: 40px;
             .coo-icon{
-                font-size: 55px;/* no */
+                font-size: 55px;
                 &.coo-icon-help, &.coo-icon-information{
                     color: #10AEFF;
                 }
@@ -173,19 +173,31 @@
         }
         &-title{
             color: #000000;
-            font-size: 18px;/* no */
+            font-size: 18px;
             font-weight: 400;
-            line-height: 16px;/* no */
+            line-height: 16px;
         }
         &-content{
-            margin-top: 10px;/* no */
+            margin-top: 10px;
             font-size: 12px;
             color: #888;
         }
         &-footer{
             text-align: right;
-            padding-bottom: 20px;/* no */
-            padding-right: 40px;/* no */
+            padding-bottom: 20px;
+            padding-right: 40px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .coo-dialog{
+        &-type-body{
+            padding: 40px 30px 0px 100px;
+        }
+        &-type-icon{
+            left: 30px;
+            top: 35px;
         }
     }
 }

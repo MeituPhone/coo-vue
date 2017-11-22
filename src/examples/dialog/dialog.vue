@@ -9,13 +9,15 @@
         <div class="demo">
             <div class="demo-title">1、demo演示</div>
             <div class="demo-box">
-                (1)：<a href="javascript:;" @click="visible=true;type='success'" class="link-demo">打开[success]</a>
-                (2)：<a href="javascript:;" @click="visible=true;type='dialog'"  class="link-demo">打开[dialog]</a>
+                (1)：<a href="javascript:;" @click="visible=true;type='success';cancelButton=false" class="link-demo">打开[success]</a>
+                (2)：<a href="javascript:;" @click="visible=true;type='dialog'; cancelButton= true"  class="link-demo">打开[dialog]</a>
                 <coo-dialog
                     :visible.sync="visible"
                     :type="type"
                     title="弹出框"
                     :lock="true"
+                    :cancel='cancelButton'
+                    :width="400"
                 >
                     <div class="">
                         测试dialog
@@ -25,11 +27,10 @@
             <div class="demo-code">
                 <pre>
 &lt;coo-dialog
-        :visible.sync="visible"
-        :type="type"
-        title="弹出框"
-        &gt;
-        测试dialog
+    :visible.sync="visible"
+    :type="type"
+    title="弹出框"&gt;
+    测试dialog
 &lt;/coo-dialog&gt;</pre>
             </div>
         </div>
@@ -70,7 +71,8 @@
         data () {
             return {
                 visible: false,
-                type: ''
+                type: '',
+                cancelButton: false
             };
         }
     };

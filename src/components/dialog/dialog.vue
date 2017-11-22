@@ -16,7 +16,7 @@
                 <div class="coo-dialog-body">
                     <slot></slot>
                 </div>
-                <div class="coo-dialog-footer" v-if="ok || cancel">
+                <div class="coo-dialog-footer clearfix" v-if="ok || cancel">
                     <button class="coo-dialog-btn coo-dialog-cancel" v-if="cancel" @click="handleClose">{{ cancelLabel }}</button>
                     <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
                 </div>
@@ -40,6 +40,8 @@
                     </div>
                 </div>
                 <div class="coo-dialog-type-footer">
+
+                    <button class="coo-dialog-btn coo-dialog-cancel" v-if="cancel" @click="handleClose">{{ cancelLabel }}</button>
                     <button  class="coo-dialog-btn coo-dialog-ok" v-if="ok" @click="handleOk">{{ okLabel }}</button>
                 </div>
             </div>

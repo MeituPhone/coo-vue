@@ -5,8 +5,7 @@
                   'lazy-loaded': loaded,
                   'lazy-mask': !thumb && loading,
                   'lazy-fadeout': fadeOut
-                }" 
-        @click="handleLoad">
+                }" @click="handleLoad">
             <img :src="imgSrc" :lazy-src="src" />
             <a href="javascript:;" class="lazy-btn-reload" @click="handleLoad" v-if="reload">重新加载</a>
             <span v-if="loading && mum" class="coo-loading"></span>
@@ -16,7 +15,7 @@
     export default {
         props: {
             src: {
-            	type: String
+                type: String
             },
             thumb: String,
             mum: {
@@ -46,7 +45,7 @@
         },
         methods: {
             handleLoad () {
-                if (this.loading) {
+                if (this.loading || this.loaded) {
                     return false;
                 }
                 this.loadImage();
@@ -57,9 +56,13 @@
                 let image = new Image();
                 image.onload = () => {
                     this.fadeOut = true;
-                    this.imgSrc = !this.thumb ? this.src : this.imgSrc;
+                    // 没定一预览图、菊花等过渡效果；设置设置图片，防止闪动
+                    if (!this.thumb && !this.mum) {
+                        this.imgSrc = this.src;
+                    }
                     setTimeout(() => {
-                    	this.imgSrc = this.src;
+                        this.imgSrc = !this.thumb ? this.src : this.imgSrc;
+                        this.imgSrc = this.src;
                         this.loading = false;
                         this.loaded = true;
                         this.fadeOut = false;
@@ -77,8 +80,7 @@
                 this.loadImage();
             }
         },
-        create () {
-
+        created () {
         },
     };
 </script>

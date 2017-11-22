@@ -26,6 +26,9 @@ a{
         margin-right: 10px;
     }
 }
+a, div,span,p{
+    -webkit-tap-highlight-color:transparent;
+}
 
 pre{
     margin: 0px;
@@ -62,6 +65,7 @@ pre{
         background: #ebeef5;
         border-radius: 4px;
         margin: 0px 10px;
+        overflow: hidden;
     }
 }
 

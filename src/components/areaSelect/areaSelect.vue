@@ -7,26 +7,28 @@
             <span v-if="!current.province.id">请选择省 / 市 / 区 </span>
         </div>
         <div class="coo-area-mask" v-show="show"></div>
-        <div class="coo-area-body" v-show="show">
-            <div class="coo-area-title">所在地区<button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button></div>
-            <div class="coo-area-tab clearfix">
-                <span @click="handleTabProvince" class="coo-area-tabitem" :class="{active: tab === 'province'}">{{ selected.province.id ? selected.province.name : '请选择' }}</span>
-                <span @click="handleTabCity" class="coo-area-tabitem" :class="{active: tab === 'city'}" v-if="selected.province.id">{{ selected.city.id ? selected.city.name : '请选择' }}</span>
-                <span @click="handleTabCountry" class="coo-area-tabitem" :class="{active: tab === 'country'}" v-if="selected.city.id">{{ selected.country.id ? selected.country.name : '请选择' }}</span>
-                <button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button>
+        <transition name="coo-area-fade">
+            <div class="coo-area-body" v-show="show">
+                <div class="coo-area-title">所在地区<button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button></div>
+                <div class="coo-area-tab clearfix">
+                    <span @click="handleTabProvince" class="coo-area-tabitem" :class="{active: tab === 'province'}">{{ selected.province.id ? selected.province.name : '请选择' }}</span>
+                    <span @click="handleTabCity" class="coo-area-tabitem" :class="{active: tab === 'city'}" v-if="selected.province.id">{{ selected.city.id ? selected.city.name : '请选择' }}</span>
+                    <span @click="handleTabCountry" class="coo-area-tabitem" :class="{active: tab === 'country'}" v-if="selected.city.id">{{ selected.country.id ? selected.country.name : '请选择' }}</span>
+                    <button class="coo-area-close" @click="handleClose"><mt-icon type="clear"></mt-icon></button>
+                </div>
+                <div class="coo-area-list">
+                    <dl class="province-list" v-show="tab==='province'">
+                        <dd v-for="item in provinces" @click="handleSelectProvince(item)" :class="{active: parseInt(item.id) === parseInt(selected.province.id)}">{{ item.name }}</dd>
+                    </dl>
+                    <dl class="city-list" v-show="tab==='city'">
+                        <dd v-for="item in cities" @click="handleSelectCity(item)" :class="{active: parseInt(item.id) === parseInt(selected.city.id)}">{{ item.name }}</dd>
+                    </dl>
+                    <dl class="country-list" v-show="tab==='country'">
+                        <dd v-for="item in countries" @click="handleSelectCountry(item)" :class="{active: parseInt(item.id) === parseInt(selected.country.id)}">{{ item.name }}</dd>
+                    </dl>
+                </div>
             </div>
-            <div class="coo-area-list">
-                <dl class="province-list" v-show="tab==='province'">
-                    <dd v-for="item in provinces" @click="handleSelectProvince(item)" :class="{active: parseInt(item.id) === parseInt(selected.province.id)}">{{ item.name }}</dd>
-                </dl>
-                <dl class="city-list" v-show="tab==='city'">
-                    <dd v-for="item in cities" @click="handleSelectCity(item)" :class="{active: parseInt(item.id) === parseInt(selected.city.id)}">{{ item.name }}</dd>
-                </dl>
-                <dl class="country-list" v-show="tab==='country'">
-                    <dd v-for="item in countries" @click="handleSelectCountry(item)" :class="{active: parseInt(item.id) === parseInt(selected.country.id)}">{{ item.name }}</dd>
-                </dl>
-            </div>
-        </div>
+        </transition>
     </div>
 </template>
 <script>

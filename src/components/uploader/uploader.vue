@@ -1,7 +1,13 @@
 <template>
     <div class="coo-uploader clearfix">
         <div class="coo-uploader-image" v-for="(image, index) in images">
-            <img :src="image" @click="handlePreview" />
+            <coo-lazy-img 
+                    :src="image"
+                    :autoLoad="true"
+                    :mum="mum"
+                    @click="handlePreview"
+                    ></coo-lazy-img>
+            <coo-lazy
             <div class="coo-uploader-bar" v-if="!readonly">
                 <a href="javascript:;" @click="handleRemove(index)">删除</a>
             </div>
@@ -11,37 +17,69 @@
             <span v-show="uploading" class="coo-loading"></span>
             <input  type="file" class="coo-uploader-file" ref="uploader-file" @change="handleChange" />
         </button>
+        <coo-dialog
+            v-if="needConfirm"        
+            :visible.sync="visibleDialog"
+            type="delete"
+            title="确认删除？"
+            :width="400"
+            :lock="true"
+            :beforeOk="handleConfirmRemove"
+                >
+            <div class="">
+                你确认要删除上传的图片吗？
+            </div>
+        </coo-dialog>
     </div>
 
 </template>
 <script>
     import axios from 'axios';
+    import Dialog from '../dialog/dialog.vue';
+    import Icon from '../icon/icon.vue';
+    import LazyImg from '../lazyImg/lazyImg.vue';
     export default {
         props: {
-            actionPath: {
+            actionPath: {                   //  上传图片API
                 type: String,
                 default: ''
             },
-            files: {
+            files: {                        // 初始图片
                 type: Array,
                 default: []
             },
-            readonly: {
+            readonly: {                     // 只读
                 type: Boolean,
                 default: false
             },
-            length: {
+            mum: {                          // 初始化图片加载中菊花
+                type: Boolean,
+                default: true
+            },
+            length: {                       // 最多可上传
                 type: Number,
                 default: 1
+            },
+            needConfirm: {                  // 显示确认删除框
+                type: Boolean,
+                default: true
             }
+        },
+        components: {
+            cooDialog: Dialog,
+            cooIcon: Icon,
+            cooLazyImg: LazyImg
         },
         data () {
             return {
                 uploading: false,
-                images: []
+                images: [],
+                visibleDialog: false,
+                removeIndex: 0
             };
         },
         methods: {
+            // 上传图片
             onUploadFile (data) {
                 return axios({
                     url: this.actionPath,
@@ -59,11 +97,17 @@
                     return Promise.reject(error);
                 });
             },
+            // 点击添加图片框
             handleClick () {
                 this.$refs['uploader-file'].click();
             },
+            // input框变化触发
             handleChange (e) {
                 if (this.uploading) {
+                    return false;
+                }
+                // 判断是否选择图片
+                if (this.$refs['uploader-file'].files.length === 0) {
                     return false;
                 }
                 let formData = new FormData();
@@ -85,10 +129,25 @@
                     this.uploading = false;
                 });
             },
+            // 删除按钮事件
             handleRemove (index) {
-                this.images.splice(index, 1);
-                this.$emit('remove', this.images);
+                this.removeIndex = index;
+                if (this.needConfirm) {
+                    this.visibleDialog = true;
+                } else {
+                    this.handleConfirmRemove();
+                }
             },
+            // 确认删除
+            handleConfirmRemove (hide) {
+                this.images.splice(this.removeIndex, 1);
+                this.$emit('remove', this.images);
+                // 确认框回调
+                if (typeof hide === 'function') {
+                    hide();
+                }
+            },
+            // 预览事件
             handlePreview (filePath) {
             }
         },

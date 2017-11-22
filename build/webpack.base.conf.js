@@ -27,8 +27,8 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
             filename: 'index.html',
             template: resolve('src', 'index.html'),
             chunks: ['vendor', 'app'],
-            hash: true,
-            inject: 'head',
+            hash: false,
+            inject: 'body',
             xhtml: true,
             minify: {
                 removeComments: true,
@@ -73,10 +73,6 @@ module.exports = function webpackBaseConfig (NODE_ENV = 'development') {
                         publicPath: config.imgPath,
                         name: 'images/[hash:8].[name].[ext]'
                     }
-                },
-                {
-                    test: /\.html$/,
-                    loader: 'html-loader'
                 },
                 {
                     test: /\.ejs$/,

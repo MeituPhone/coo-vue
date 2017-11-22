@@ -18,11 +18,11 @@
             </div>
             <div class="demo-code">
                 <pre>&lt;coo-area-select
-                        :province="{}"
-                        :city="{}"
-                        :country="{}"
-                        @select="handleSelectArea"
-                &gt;&lt;/coo-area-select&gt; </pre>
+        :province="{}"
+        :city="{}"
+        :country="{}"
+        @select="handleSelectArea"
+    &gt;&lt;/coo-area-select&gt; </pre>
             </div>
         </div>
         <div class="param">

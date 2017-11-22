@@ -10,9 +10,9 @@
         margin-right: 5px;
         transition: border-color 0.2s ease;
         position: relative;
-        img{
-            max-width: 88px;
-            max-height: 88px;
+        .lazy-img{
+            width: 90px;
+            height: 90px;
             display: block;
             position: absolute;
             left: 50%;
@@ -73,5 +73,8 @@
     }
     img{
         width: 100%;
+    }
+    .coo-icon{
+        color: #d2d2d2;
     }
 }
