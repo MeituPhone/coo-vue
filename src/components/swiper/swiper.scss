@@ -72,3 +72,11 @@
         float: left;
     }
 }
+
+@media only screen and (max-width: 768px){
+    .coo-swiper{
+        &-prev, &-next{
+            display: none;
+        }
+    }
+}

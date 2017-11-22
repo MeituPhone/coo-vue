@@ -63,7 +63,7 @@
                     city: {},
                     country: {}
                 },
-                show: false，                // 是否显示地区选择框
+                show: false,                // 是否显示地区选择框
             };
         },
         methods: {
