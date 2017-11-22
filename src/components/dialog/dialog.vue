@@ -60,57 +60,57 @@
             event: 'visible-change',
         },
         props: {
-            title: {
+            title: {                            // 标题
                 type: String,
                 default: '',
-            },
+            },                                  // 是否显示
             visible: {
                 type: Boolean,
                 default: false,
             },
-            lock: {
+            lock: {                             // 锁屏
                 type: Boolean,
                 default: true,
             },
-            showClose: {
+            showClose: {                        // 显示关闭按钮
                 type: Boolean,
                 default: true,
             },
-            type: {
+            type: {                             // 类型
                 type: String,
                 default: 'dialog',
             },
-            width: {
+            width: {                            // 宽度
                 type: Number,
                 default: 500,
             },
-            top: {
+            top: {                              // 位置
                 type: String,
                 default: '20%',
             },
-            beforeOk: Function,
-            beforeCancel: Function,
-            ok: {
+            beforeOk: Function,                 // ok之前执行
+            beforeCancel: Function,             // cancel 之前执行
+            ok: {                               // 显示ok
                 type: Boolean,
                 default: true,
-            },
+            },                                  // 显示取消按钮
             cancel: {
                 type: Boolean,
                 default: true,
-            },
+            },                                  // ok按钮文案
             okLabel: {
                 type: String,
                 default: '确定',
-            },
+            },                                  // 取消按钮文案
             cancelLabel: {
                 type: String,
                 default: '取消',
-            },
+            },                                  // 自动关闭时间
             timeout: {
                 type: Number,
                 default: 0,
             },
-            appendToBody: {
+            appendToBody: {                     // dom节点append到body
                 type: Boolean,
                 default: false
             }
@@ -137,9 +137,11 @@
             },
         },
         methods: {
+            // 点击蒙层
             handleWrapperClick () {
                 this.handleClose();
             },
+            // 点击关闭
             handleClose () {
                 if (typeof this.beforeClose === 'function') {
                     this.beforeClose(this.hide);
@@ -147,6 +149,7 @@
                     this.hide();
                 }
             },
+            // 点击确认
             handleOk () {
                 if (typeof this.beforeOk === 'function') {
                     this.beforeOk(this.hide);
@@ -154,6 +157,7 @@
                     this.hide();
                 }
             },
+            // 隐藏dialog
             hide () {
                 this.$emit('update:visible', false);
             },

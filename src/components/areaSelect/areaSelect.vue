@@ -49,24 +49,25 @@
         },
         data () {
             return {
-                provinces: [],
-                cities: [],
-                countries: [],
-                tab: 'province',
-                selected: {
+                provinces: [],              // 省份数据
+                cities: [],                 // 城市数据
+                countries: [],              // 地区数据
+                tab: 'province',            // 当前tab
+                selected: {                 // 选中的地址数据
                     province: {},
                     city: {},
                     country: {}
                 },
-                current: {
+                current: {                  // 当前地址数据
                     province: {},
                     city: {},
                     country: {}
                 },
-                show: false
+                show: false，                // 是否显示地区选择框
             };
         },
         methods: {
+            // 选中省份
             handleSelectProvince (province) {
                 this.tab = 'city';
                 if (this.selected.province.id === province.id) {
@@ -85,6 +86,7 @@
                     });
                 }
             },
+            // 选中城市
             handleSelectCity (city) {
                 this.tab = 'country';
                 if (this.selected.city.id === city.id) {
@@ -101,6 +103,7 @@
                     });
                 }
             },
+            // 选中地区
             handleSelectCountry (country) {
                 this.show = false;
                 if (this.selected.country.id === country.id) {
@@ -113,9 +116,11 @@
                     winScroll(true);
                 }
             },
+            // 选中省份tab
             handleTabProvince () {
                 this.tab = 'province';
             },
+            // 选中城市tab
             handleTabCity () {
                 this.tab = 'city';
                 if (!this.cities.length) {
@@ -128,6 +133,7 @@
                     }
                 }
             },
+            // 选中地区tab
             handleTabCountry () {
                 this.tab = 'country';
                 if (!this.countries.length) {
@@ -140,12 +146,14 @@
                     }
                 }
             },
+            // 关闭地区限制框
             handleClose () {
                 this.show = false;
                 if (IsMobile) {
                     winScroll(true);
                 }
             },
+            // 显示地区选择框
             handleShow () {
                 this.show = true;
                 if (IsMobile) {
@@ -154,6 +162,7 @@
             }
         },
         mounted () {
+            // 异步加载地区数据
             require.ensure([], () => {
                 let AREA = require('./area');
                 AREA.default.result.map((item, index) => {

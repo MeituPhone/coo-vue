@@ -71,6 +71,7 @@
             }
         },
         methods: {
+            // 设置第几个index
             setIndex (index) {
                 let oldIndex = this.currentIndex;
                 if (!this.loop) {
@@ -85,6 +86,7 @@
                     this.currentIndex = index;
                 }
                 this.translateX = -((this.currentIndex + 1) * this.width);
+                // 触发成功事件
                 if (oldIndex !== this.currentIndex) {
                     this.$emit('success', this.currentIndex);
                 }
@@ -117,6 +119,7 @@
             },
             // 点击下一张
             onNext () {
+                // 最后一张且不循环
                 if (this.currentIndex === this.sliderLength - 1 && !this.loop) {
                     return false;
                 }
@@ -149,15 +152,18 @@
                 }
                 this.setIndex(index);
             },
+            // 监听鼠标点击
             onMouseDown (event) {
                 this.onMouseStart(event);
                 window.addEventListener('mousemove', this.onMouseMove);
                 window.addEventListener('mouseup', this.onTouchEnd);
                 window.addEventListener('contextmenu', this.onTouchEnd);
             },
+            // 监听触摸
             onTouchDown (event) {
                 this.onTouchStart(event);
             },
+            // 监听鼠标移动
             onMouseStart (event) {
                 this.touching = true;
                 this.startX = event.clientX;
@@ -172,12 +178,14 @@
                     this.startTranslateX = this.translateX;
                 }
             },
+            /// 监听鼠标移动
             onMouseMove (event) {
                 if (this.touching) {
                     this.differenceX = event.clientX - this.startX;
                     this.translateX = this.startTranslateX + this.differenceX;
                 }
             },
+            /// 监听触屏滑动
             onTouchStart (event) {
                 if (this.sliderLength <= 1) {
                     return false;
@@ -198,6 +206,7 @@
                     this.startTranslateX = this.translateX;
                 }
             },
+            /// 监听触屏滑动
             onTouchMove (event) {
                 if (this.touching) {
                     this.differenceX = event.touches[0].clientX - this.startX;
@@ -220,6 +229,7 @@
                     this.isStart = false;
                 }
             },
+            /// 监听触屏结束
             onTouchEnd (event) {
                 event.preventDefault();
                 this.touching = false;

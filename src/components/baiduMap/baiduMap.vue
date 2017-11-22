@@ -83,7 +83,7 @@
 
                 let _this = this;
 
-                map.addEventListener('click', function(){
+                map.addEventListener('click', function () {
                     _this.$emit('click');
                 });
             }
