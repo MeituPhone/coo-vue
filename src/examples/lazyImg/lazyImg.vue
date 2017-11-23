@@ -38,8 +38,7 @@
         :autoLoad="true"
         :mum="true"
         &gt;
-        测试dialog
-&lt;/coo-dialog&gt;</pre>
+&lt;/coo-lazy-img&gt;</pre>
             </div>
         </div>
         <div class="param">
