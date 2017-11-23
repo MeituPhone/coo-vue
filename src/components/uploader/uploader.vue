@@ -6,6 +6,7 @@
                     :autoLoad="true"
                     :mum="mum"
                     @click="handlePreview"
+                    :key="index"
                     ></coo-lazy-img>
             <coo-lazy
             <div class="coo-uploader-bar" v-if="!readonly">

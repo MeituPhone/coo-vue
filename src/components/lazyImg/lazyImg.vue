@@ -32,6 +32,16 @@
                 if (value) {
                     this.loadImage();
                 }
+            },
+            src (value) {
+                // 图片Url修改 重新Load图片
+                if (value !== this.imgSrc) {
+                    this.imgSrc = value;
+                    if (!this.loaded) {
+                        this.loading = false;
+                        this.loadImage();
+                    }
+                }
             }
         },
         data () {
@@ -68,6 +78,7 @@
                         this.fadeOut = false;
                     }, 500);
                 };
+                // 加载错误显示重新加载按钮
                 image.onerror = () => {
                     this.reload = true;
                     this.loading = false;
