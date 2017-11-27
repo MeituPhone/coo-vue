@@ -58,10 +58,10 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="">
+                    <router-link to="/components/toast">
                         <div class="icon">Toast</div>
                         <div class="name">Toast</div>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
         </div>

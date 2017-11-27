@@ -6,6 +6,7 @@ import BaiduMap from '../examples/baiduMap/baiduMap.vue';
 import Swiper from '../examples/swiper/swiper.vue';
 import AreaSelect from '../examples/areaSelect/areaSelect.vue';
 import LazyImg from '../examples/lazyImg/lazyImg.vue';
+import Toast from '../examples/toast/toast.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -32,6 +33,13 @@ const routes = [
                 component: Uploader,
                 beforeEnter: (to, from, next) => {
                     _setElement('uploader vue上传组件 - CooVue', next);
+                }
+            },
+            {
+                path: 'toast',
+                component: Toast,
+                beforeEnter: (to, from, next) => {
+                    _setElement('toast vue上传组件 - CooVue', next);
                 }
             },
             {
