@@ -23,8 +23,9 @@ this.$toast({
         <div class="param">
             <div class="param-title">2、参数说明</div>
             <div class="param-list">
-                <div class="param-item">1：type：Toast类型 , 类型：String</div>
-                <div class="param-item">2：message：提示信息，类型：String，默认：空(可为空)</div>
+                <div class="param-item">1：type：Toast类型 , 类型：String，默认：success(可为空)</div>
+                <div class="param-item">2：message：提示信息，类型：String</div>
+                <div class="param-item">3：timeout：自动关闭的时间，类型：Number,默认： 3000</div>
             </div>
         </div>
 

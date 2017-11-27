@@ -21,6 +21,13 @@
                         <div class="name">弹出框</div>
                     </router-link>
                 </li>
+                
+                <li class="item">
+                    <router-link to="/components/toast">
+                        <div class="icon">Toast</div>
+                        <div class="name">Toast</div>
+                    </router-link>
+                </li>
                 <li class="item">
                     <router-link to="/components/swiper">
                         <div class="icon">swiper</div>
@@ -56,12 +63,6 @@
                         <div class="icon">countDown</div>
                         <div class="name">倒计时</div>
                     </a>
-                </li>
-                <li class="item">
-                    <router-link to="/components/toast">
-                        <div class="icon">Toast</div>
-                        <div class="name">Toast</div>
-                    </router-link>
                 </li>
             </ul>
         </div>
