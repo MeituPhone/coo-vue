@@ -32,7 +32,6 @@
     left: 50%;
     padding: 15px 20px;
     transform: translate(-50%, -50%);
-    background: rgba(17, 17, 17, 0.7);
     text-align: center;
     border-radius: 5px;
     color: #FFFFFF;
@@ -43,11 +42,45 @@
         font-size: 40px;
         line-height: 1;
         margin: 0px auto;
+        margin-bottom: 5px;
         i{
             display: block;
         }
     }
+    &-tip{
+        padding: 10px 20px;
+    }
     &-message{
-        margin-top: 5px;
+        font-size: 16px;
+    }
+    &-horizontal{
+        padding-left: 50px;
+       .coo-toast{
+            &-icon{
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                height: 25px;
+                width: 25px;
+                margin-bottom: 0px;
+                font-size: 25px;
+            }
+       } 
+    }
+    &-theme-default{
+        background: rgba(17, 17, 17, 0.7);
+        border: 1px solid rgba(17, 17, 17, 1);
+    }
+    &-theme-blue{
+        background: rgba(39, 143, 245, 0.7);
+        border: 1px solid #00acff;
+    }
+    &-theme-red{
+        background: rgba(245, 69, 69, 0.7);
+        border: 1px solid #ff0000;
+    }
+    &-theme-orange{
+        background: rgba(224, 189, 71, 0.8);
+        border: 1px solid #efab13;
     }
 }
