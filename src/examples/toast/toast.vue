@@ -1,10 +1,10 @@
 <template>
     <div class="component-layout">
         <div class="component-name">
-            Toast 图片懒加载组件<br />
+            Toast 提示组件<br />
         </div>
         <div class="component-description">
-            Toast 注册到全局，因此可以用js的形式调取...
+            Toast 注册到全局，因此可以用js的形式调取(this.$toast({...}))...
         </div>
         <div class="demo">
             <div class="demo-title">1、demo演示</div>
