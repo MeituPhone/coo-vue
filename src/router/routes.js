@@ -7,6 +7,7 @@ import Swiper from '../examples/swiper/swiper.vue';
 import AreaSelect from '../examples/areaSelect/areaSelect.vue';
 import LazyImg from '../examples/lazyImg/lazyImg.vue';
 import Toast from '../examples/toast/toast.vue';
+import Ripple from '../examples/ripple/ripple.vue';
 
 // 设置页面元素
 const _setElement = (title, next) => {
@@ -75,6 +76,13 @@ const routes = [
                 component: LazyImg,
                 beforeEnter: (to, from, next) => {
                     _setElement('图片懒加载左键 - CooVue', next);
+                }
+            },
+            {
+                path: 'ripple',
+                component: Ripple,
+                beforeEnter: (to, from, next) => {
+                    _setElement('水波涟漪特效 - CooVue', next);
                 }
             }
         ]

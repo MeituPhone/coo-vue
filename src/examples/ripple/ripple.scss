@@ -1,0 +1,10 @@
+@import "../../assets/scss/index";
+.btn-test{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 200px;
+    background-color: $color-green;
+    color: $color-white;
+}

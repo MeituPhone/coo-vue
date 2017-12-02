@@ -13,6 +13,7 @@ import swiperItem from './swiper/swiperItem.vue';
 import areaSelect from './areaSelect/areaSelect.vue';
 import lazyImg from './lazyImg/lazyImg.vue';
 import toast from './toast/toast.js';
+import ripple from './ripple/ripple.vue';
 
 export const Uploader = uploader;
 export const Dialog = dialog;
@@ -21,6 +22,7 @@ export const Swiper = swiper;
 export const SwiperItem = swiperItem;
 export const AreaSelect = areaSelect;
 export const LazyImg = lazyImg;
+export const Ripple = ripple;
 
 if (!window.install) {
     Vue.prototype.$toast = toast;
