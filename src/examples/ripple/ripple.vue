@@ -53,4 +53,4 @@
         }
     };
 </script>
-<style lang="scss" src="./ripple.scss"></style>
+<style lang="scss" src="./ripple.scss" scoped></style>
