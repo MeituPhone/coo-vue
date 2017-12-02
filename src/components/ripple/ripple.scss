@@ -1,5 +1,26 @@
-.ripple{
+@keyframes ripple {
+    from{
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    to{
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.coo-ripple{
     &-box{
         position: relative;
+        display: inline-block;
+        overflow: hidden;
+    }
+    &-cover{
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%) scale(0);
+        border-radius: 50%;
+        opacity: 1;
+        animation: ripple ease-in-out 1s forwards;
     }
 }

@@ -53,15 +53,15 @@
                     </router-link>
                 </li>
                 <li class="item">
-                    <a href="">
-                        <div class="icon">select</div>
-                        <div class="name">下拉选择</div>
-                    </a>
+                    <router-link to="/components/ripple">
+                        <div class="icon">ripple</div>
+                        <div class="name">涟漪容器</div>
+                    </router-link>
                 </li>
                 <li class="item">
                     <a href="">
-                        <div class="icon">countDown</div>
-                        <div class="name">倒计时</div>
+                        <div class="icon">select</div>
+                        <div class="name">下拉选择</div>
                     </a>
                 </li>
             </ul>

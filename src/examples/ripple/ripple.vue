@@ -10,7 +10,12 @@
             <div class="demo-title">1、demo演示</div>
             <div class="demo-box-3">
                 <coo-ripple>
-                    <a href="javasript:;" class="btn-test">模拟水波涟漪效果</a>
+                    <a href="javascript:;" class="btn-test">模拟水波涟漪效果</a>
+                </coo-ripple>
+            </div>
+               <div class="demo-box-2">
+                <coo-ripple>
+                    <img src="https://photo.tuchong.com/1826690/f/10651083.jpg" />
                 </coo-ripple>
             </div>
             <div class="demo-code">

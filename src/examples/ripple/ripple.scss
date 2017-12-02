@@ -1,4 +1,7 @@
-@import "../../assets/scss/index";
+@import "../../assets/scss/global/variables";
+.demo-box-3{
+    padding: 30px;
+}
 .btn-test{
     display: block;
     height: 50px;
@@ -7,4 +10,19 @@
     width: 200px;
     background-color: $color-green;
     color: $color-white;
+    
+    &:hover{
+        text-decoration: none;
+    }
+}
+.demo-box-2{
+    padding: 30px;
+    img{
+        width: 200px;
+        display: block;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 }

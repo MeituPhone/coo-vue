@@ -111,3 +111,21 @@ export const winScroll = (canScroll) => {
         document.getElementsByTagName('html')[0].style.paddingRight = `${SCROLL_BAR_WIDTH()}px`;
     }
 };
+
+// 获取距离y坐标
+export const getOffsetTop = (dom) => {
+    let top = dom.offsetTop;
+    if (dom.offsetParent !== null) {
+        top += getOffsetTop(dom.offsetParent);
+    }
+    return top;
+};
+
+// 获取距离x坐标
+export const getOffsetLeft = (dom) => {
+    let left = dom.offsetLeft;
+    if (dom.offsetParent !== null) {
+        left += getOffsetLeft(dom.offsetParent);
+    }
+    return left;
+};
