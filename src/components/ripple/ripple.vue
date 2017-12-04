@@ -16,15 +16,21 @@
         },
         methods: {
             handleClick (e) {
+                // 获取容器宽度
                 let offsetWidth = this.$refs['box'].offsetWidth;
                 let offsetHeight = this.$refs['box'].offsetHeight;
                 let radius = Math.sqrt(offsetWidth * offsetWidth + offsetHeight * offsetHeight) * 2;
 
-                let event = e || window.event;
+                // 获取容器的坐标
                 let offsetLeft = getOffsetLeft(this.$refs['box']);
                 let offsetTop = getOffsetTop(this.$refs['box']);
-                let clientX = event.clientX;
-                let clientY = event.clientY;
+
+                // 获取点击坐标
+                let event = e || window.event;
+                let clientX = event.pageX;
+                let clientY = event.pageY;
+
+                // 获取点击相对容器的坐标
                 let left = clientX - offsetLeft;
                 let top = clientY - offsetTop;
 
