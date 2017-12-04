@@ -16,6 +16,7 @@
         methods: {
             close () {
                 this.$refs['cover'].parentNode.removeChild(this.$el);
+                this.$destroy();
             },
         },
         mounted () {
