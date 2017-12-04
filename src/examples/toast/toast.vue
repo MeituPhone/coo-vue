@@ -43,26 +43,29 @@ this.$toast({
     </div>
 </template>
 <script>
+    let _myToast;
+    let _otherToast;
     export default {
         components: {
         },
         data () {
             return {
+
             };
         },
         methods: {
             handleToast () {
-                let myToast = this.$toast({
+                _myToast = this.$toast({
                     type: 'success',
                     message: '提示信息'
                 });
                 // 主动关闭
                 // setTimeout(() => {
-                //     myToast.close();
+                //     _myToast.close();
                 // }, 3000);
             },
             handleHorizontalToast () {
-                let myToast = this.$toast({
+                _otherToast = this.$toast({
                     type: 'warn',
                     message: '提示信息',
                     direction: 'horizontal',
@@ -70,6 +73,11 @@ this.$toast({
                 });
             },
         },
+        beforeDestroy () {
+            // 主动关闭
+            _myToast.close();
+            _otherToast.close();
+        }
     };
 </script>
 <style lang="scss" src="./toast.scss"></style>
