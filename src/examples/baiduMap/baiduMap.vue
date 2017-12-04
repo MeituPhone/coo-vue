@@ -1,7 +1,7 @@
 <template>
     <div class="component-layout">
         <div class="component-name">
-            标度地图组件<br />
+            百度地图组件<br />
         </div>
         <div class="component-description">
             这是一个百度地图组件，允许自定义标注标题、地址等信息...
