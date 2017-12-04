@@ -1,12 +1,16 @@
 # coo-vue
-some responsive component for vue
+无疑重复造轮子，只在整理一些平时项目中写过的常用组件。尽量支持各个PC、移动端
 
 ## Getting Started
 
 ```bash
 # install
 npm install
+# run
+npm start
 ```
+
+访问 http://localhost:9000/#/ 开始开发
 
 
 ## Documents
